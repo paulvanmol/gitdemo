@@ -1,5 +1,6 @@
+%let gender=F; 
 proc print data=sashelp.class; 
-var name height weigth; 
-where sex="F"; 
-title "gender is F"; 
+var name height weight; 
+where sex="&gender"; 
+title "gender is &gender"; 
 run; 
