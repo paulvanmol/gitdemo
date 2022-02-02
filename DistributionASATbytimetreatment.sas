@@ -1,8 +1,9 @@
-%let gpath='.';
+%let gpath=d:\workshop\git\output;
+%let path=d:\workshop\git;
 %let dpi=100;
 
-ods listing style=htmlblue image_dpi=&dpi gpath=&gpath; 
-ods html close;
+*ods listing style=htmlblue image_dpi=&dpi gpath="&gpath"; 
+*ods html style=statistical image_dpi=&dpi gpath="&gpath";
 option missing=' ';
 
 proc format;
@@ -39,7 +40,7 @@ data asat;
 run;
 
 /*--Distribution of ASAT by Time and Treatment--*/
-ods graphics / reset width=5in height=3in imagename="4R_Distribution_of_ASAT_AxisTable_SG_V94";
+ods graphics / reset width=6in height=4in imagename="4R_Distribution_of_ASAT_AxisTable_SG_V94";
 title 'Distribution of ASAT by Time and Treatment';
 proc sgplot data=asat;
   vbox asat / category=week group=drug name='box' nofill;
