@@ -2,15 +2,16 @@
 libname mc1 "&path\data"; 
 data utf8data;
 length name $13;  
-name="Bruno Müller"; 
+name="Bruno MÃ¼ller"; 
 output; 
-name="Alex Fußling";
+name="Alex FuÃŸling";
 output;  
-name="€123";
+name="â‚¬123";
 len=length(name); 
 klen=klength(name);
-euro=substr(name,1,1); 
+euro=ksubstr(name,1,1); 
 output; 
+format name $15. euro $10. ; 
 run; 
 
 proc contents data=utf8data; 
