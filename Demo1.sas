@@ -1,5 +1,6 @@
-proc means data=sashelp.cars; 
-var MPG_Highway; 
+proc means data=sashelp.cars mean sum stddev; 
+var MPG_Highway MPG_City; 
+class make; 
 run; 
 
 proc sql; 
