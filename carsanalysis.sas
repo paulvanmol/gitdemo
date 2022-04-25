@@ -9,8 +9,7 @@ vbox  MPG_City/group=origin ;
 run; 
 quit; 
 
-proc univariate data=sashelp.cars 
-; 
+proc univariate data=sashelp.cars ; 
 var MPG_City MPG_Highway; 
 class origin; 
 run; 
